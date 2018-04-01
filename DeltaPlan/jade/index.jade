@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1")
+		title Document
+		link(rel="stylesheet", href="css/style.css")
+	body.page
+		div.container
+			div.step.step_two
+				div.step__block.step__block_one
+					div.title
+						p.title__text Шаг 1: Какая местность проживания?
+				div.step__block.step__block_two.step__block_active
+					div.title
+						p.title__text Шаг 2: Какой тип проживания в доме?
+					form.options(action="#")
+						div.options__block
+							input.options__input#season(type="radio", name="options", checked)
+							label.options__label(for="season")
+								div.options__img-container
+									img.options__img(src="img/2.jpg")
+								div.options__text-container
+									p.options__text Сезонный
+						div.options__block
+							input.options__input#constant(type="radio", name="options")
+							label.options__label(for="constant")
+								div.options__img-container
+									img.options__img(src="img/1.jpg")
+								div.options__text-container
+									p.options__text Постоянный
+						div.options__block
+							input.options__input#other(type="radio", name="options")
+							label.options__label(for="other")
+								div.options__img-container
+									img.options__img(src="img/3.jpg")
+								div.options__text-container
+									p.options__text Другое
+				div.step__block.step__block_three
+					div.title
+						p.title__text Шаг 3: Какой тип дома?
+			div.butons
+				div.butons__block.butons__block_before
+					p.butons__link.butons__link_before Предыдущий шаг
+				div.butons__block.butons__block_next
+					p.butons__link.butons__link_next Следующий шаг
+		script(src="js/jquery-3.3.1.min.js")
+		script(src="js/common.js")

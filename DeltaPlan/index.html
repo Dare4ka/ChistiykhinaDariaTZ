@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body class="page">
+    <div class="container">
+      <div class="step step_two">
+        <div class="step__block step__block_one">
+          <div class="title">
+            <p class="title__text">Шаг 1: Какая местность проживания?</p>
+          </div>
+        </div>
+        <div class="step__block step__block_two step__block_active">
+          <div class="title">
+            <p class="title__text">Шаг 2: Какой тип проживания в доме?</p>
+          </div>
+          <form action="#" class="options">
+            <div class="options__block">
+              <input id="season" type="radio" name="options" checked="checked" class="options__input"/>
+              <label for="season" class="options__label">
+                <div class="options__img-container"><img src="img/2.jpg" class="options__img"/></div>
+                <div class="options__text-container">
+                  <p class="options__text">Сезонный</p>
+                </div>
+              </label>
+            </div>
+            <div class="options__block">
+              <input id="constant" type="radio" name="options" class="options__input"/>
+              <label for="constant" class="options__label">
+                <div class="options__img-container"><img src="img/1.jpg" class="options__img"/></div>
+                <div class="options__text-container">
+                  <p class="options__text">Постоянный</p>
+                </div>
+              </label>
+            </div>
+            <div class="options__block">
+              <input id="other" type="radio" name="options" class="options__input"/>
+              <label for="other" class="options__label">
+                <div class="options__img-container"><img src="img/3.jpg" class="options__img"/></div>
+                <div class="options__text-container">
+                  <p class="options__text">Другое</p>
+                </div>
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="step__block step__block_three">
+          <div class="title">
+            <p class="title__text">Шаг 3: Какой тип дома?</p>
+          </div>
+        </div>
+      </div>
+      <div class="butons">
+        <div class="butons__block butons__block_before">
+          <p class="butons__link butons__link_before">Предыдущий шаг</p>
+        </div>
+        <div class="butons__block butons__block_next">
+          <p class="butons__link butons__link_next">Следующий шаг</p>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/common.js"></script>
+  </body>
+</html>

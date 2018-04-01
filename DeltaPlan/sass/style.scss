@@ -1,0 +1,249 @@
+$color1: #000;
+$color2: #fff;
+$c-active: #2b5681;
+$c-border: #3e433f;
+$c-disabled: #727272;
+$c-btn: #0000fe;
+$f-size: 15px;
+$f-family: "Arial", sans-serif;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	min-height: 100%;
+	display: flex;
+	font-size: ($f-size);
+	font-family: ($f-family);
+	color: ($color1);
+	
+}
+
+.page {
+	background: ($c-active) url('../img/bg.jpg') center top no-repeat;
+	background-size: cover;
+	min-height: 100%;
+	max-width: 100vw;
+	margin: auto;
+	display: flex;
+}
+
+.container {
+	max-width: 1030px;
+	min-height: 440px;
+	background-color: ($color2);
+	margin: 15px;
+	overflow: hidden;
+}
+
+.step {
+	width: 300%;
+	transition: transform 0.3s;
+	display: flex;
+
+	&_one {
+		transform: translateX(0);
+	}
+
+	&_two {
+		transform: translateX(-33.3333%);
+	}
+
+	&_three {
+		transform: translateX(-66.6666%);
+	}
+
+	&__block {
+		width: 33.3333%;
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.title {
+	padding: 15px;
+
+	&__text {
+		text-align: center;	
+		font-size: 35px;
+		font-weight: bold;
+		color: ($c-active);
+	}
+}
+
+.options {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px 0;
+
+	&__block {
+	}
+
+	&__label {
+		width: 100%;
+		display: block;
+		cursor: pointer;
+	}
+
+
+	&__img-container {
+		display: flex;
+		width: 230px;
+		margin-bottom: 5px;
+		background-color: #77ace1;
+	}
+
+	&__img {
+		width: 100%;
+	}
+
+	&__text-container {
+		display: flex;
+		justify-content: center;
+		padding: 13px 0;
+		padding-left: 30px;
+		border: 1px solid ($color1);
+		font-weight: bold;
+	}
+
+	&__text {
+		position: relative;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			background-color: ($color2);
+			border-radius: 50%;
+			width: 17px;
+			height: 17px;
+			top: -1px;
+			left: -22px;
+			border: 1px solid ($c-border);
+		}
+
+		&::after {
+			content: "";
+			display: none;
+			position: absolute;
+			border-radius: 50%;
+			background-color: ($color1);
+			width: 7px;
+			height: 7px;
+			top: 5px;
+			left: -16px;
+		}
+	}
+
+	&__input {
+		display: none;
+
+		&:checked {
+
+			~ .options__label {
+
+				.options__img {
+					opacity: .4;
+				}
+
+				.options__text-container {
+					background-color: ($c-active);
+					color: ($color2);
+					border-color: ($c-active);
+				}
+
+				.options__text::after {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.butons {
+	display: flex;
+	padding: 25px;
+
+	&__block {
+		width: 50%;
+		display: flex;
+		
+		&_before {
+			padding-right: 55px;
+			justify-content: flex-end;
+		}
+
+		&_next {
+			padding-left: 55px;
+		}
+	}
+
+	&__link {
+		padding: 8px 55px;
+		background-color: ($c-btn);
+		color: ($color2);
+		border-radius: 5px;
+		position: relative;
+		cursor: pointer;
+
+		&_before::before {
+			content: "<<<";
+			position: absolute;
+			top: 9px;
+			left: 20px;
+		}
+
+		&_next::before {
+			content: ">>>";
+			position: absolute;
+			top: 9px;
+			right: 20px;
+		}
+
+		&_disabled {
+			background-color: ($c-disabled);
+			cursor: default;
+		}
+	}
+}
+
+@media screen and (max-width: 812px) {
+	
+	.container {
+		width: 300px;
+		margin: 10px;
+	}
+
+	.title__text {
+		font-size: 25px;
+	}
+
+	.options {
+		flex-direction: column;
+		align-items: center;
+
+		&__block {
+			padding-top: 15px;
+		}
+	}
+
+	.butons{
+
+		&__block {
+			padding: 15px;
+		}
+
+		&__link {
+			font-size: 0;
+			height: 35px;
+
+			&::before {
+				font-size: ($f-size);
+			}
+		}
+	}
+}
